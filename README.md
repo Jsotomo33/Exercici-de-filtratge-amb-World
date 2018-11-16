@@ -1,13 +1,19 @@
 # Exercici-de-filtratge-amb-World
 
-1. Nos conectamos a MySQL:
-$conn = mysqli_connect('localhost','jose','jose123');
+1. Nos descargamos la BBBDD desde el siguiente link:
 
-2.Escogemos la BBDD con la que vamos a trabajar:
-mysqli_select_db($conn, 'world');
+http://downloads.mysql.com/docs/world.sql.gz
 
-3. Guardamos la query en una variable:
-$consulta = "SELECT * FROM country;";
+2. Descomprimos la base de datos con gunzip:
 
-4. Enviamos la consultar al SGBD para obtener el resultado:
-$resultat = mysqli_query($conn, $consulta);
+Gunzip NombreDeArchivo
+
+3. Metemos la BBDD world en nuestra base de datos:
+
+mysql -u jose -p world < world.sql
+
+4. Creamos los credenciales para conectarnos a la base de datos:
+
+$conn = mysqli_connect('localhost','jose','jose123')
+
+
